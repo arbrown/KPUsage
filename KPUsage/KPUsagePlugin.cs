@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using KeePass.Plugins;
 using KeePassLib;
 using System.Windows.Forms;
@@ -86,7 +85,7 @@ namespace KPUsage
                         var count = kvp.Key;
                         foreach (var entry in kvp.Value)
                         {
-                            file.WriteLine($"\"{entry.Strings.ReadSafe(PwDefs.TitleField)}\", {count}");
+                            file.WriteLine(entry.Strings.ReadSafe(PwDefs.TitleField) + "," + count );
                         }
                     }
                 }
